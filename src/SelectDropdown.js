@@ -50,6 +50,7 @@ const SelectDropdown = (
     renderSearchInputLeftIcon /* function returns React component for search input icon */,
     renderSearchInputRightIcon /* function returns React component for search input icon */,
     onChangeSearchInputText /* function callback when the search input text changes, this will automatically disable the dropdown's interna search to be implemented manually outside the component  */,
+    windowSize
   },
   ref,
 ) => {
@@ -178,6 +179,8 @@ const SelectDropdown = (
               keyboardShouldPersistTaps="always"
               onEndReached={() => onScrollEndReached && onScrollEndReached()}
               onEndReachedThreshold={0.5}
+              windowSize={windowSize}
+              maxToRenderPerBatch={windowSize}
             />
           </DropdownWindow>
         </DropdownModal>
